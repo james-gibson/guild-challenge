@@ -6,6 +6,8 @@ import Axios from 'axios';
 Axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
 Axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 const SERVER_URL = "https://us-central1-gibsunas-playground.cloudfunctions.net/guild-challenge-server";
+const randomNumber = Math.floor(Math.random() * (10 + 1));
+const AVATAR_URL = `https://picsum.photos/id/${randomNumber}/200/300`;
 const fetchMessages = (axios) => {
   return axios.get(SERVER_URL);
 }
@@ -29,7 +31,7 @@ const store = new Vuex.Store({
       // console.log(`Send: ${payload}`);
 
       // User id is hardcoded (support for multiple identified users is not implemented yet)
-      postMessage(Axios)({id:Date.now(), userId: '1', avatarUrl: 'https://source.unsplash.com/random', msg: payload})
+      postMessage(Axios)({id:Date.now(), userId: '1', avatarUrl: AVATAR_URL, msg: payload})
         .then((data) => {
           context.commit("recieveMessages", data)
 
