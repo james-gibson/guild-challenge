@@ -22,7 +22,7 @@
             v-model="message" 
             />
           <div>
-            <button class="secondary" @click="onSubmit">Add message</button><br />
+            <button class="secondary" @click="onSubmit">Send message</button><br />
           </div>
         </div>
       </div>
@@ -98,7 +98,6 @@ $danger: #770b04;
 
 body {
   font-family: "Montserrat";
-  font-family: "Mali";
   background-color: $onyx;
   color: $onyx;
 
@@ -140,7 +139,6 @@ body {
     text-align: center;
     border: none;
     font-family: "Montserrat";
-    font-family: "Mali";
     font-family: "Heebo";
   }
 }
