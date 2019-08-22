@@ -41,19 +41,6 @@ export default {
       message: ""
     }
   },
-  updated() {
-    // //console.log(this.messages)
-    // const id = this.messages.length > 0 ? this.messages[this.messages.length - 1].id : null;
-    // //console.log("id", id)
-    // if(id) {
-    //   const obj = document.getElementById(id);
-    //   const container = document.getElementsByClassName("container-inner");
-    //   // console.log(obj)
-    //   if (!obj) {return}
-    //   obj.scrollIntoView();
-    //   container.scrollTop = container.scrollHeight;
-    // }
-  },
   components: {
     Message
   },
@@ -90,11 +77,7 @@ $sunny: #fff266;
 $tiger: #5c3972;
 $lilac: #ebcffc;
 $rose: #fca7a7;
-// actions
-$lapis: #005169;
-$sativa: #0d5c22;
-$warnge: #f3a32f;
-$danger: #770b04;
+
 
 body {
   font-family: "Montserrat";
