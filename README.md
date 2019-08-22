@@ -62,6 +62,12 @@ CREATE TABLE messages (
     msg text NOT NULL
 );
 ```
+  * Other ideas considered:
+    - Deploying the server to heroku instead of cloud functions
+    - Using a third party tool such as firebase to handle realtime updates
+  * Additional constraint:
+    - Building a simple messaging service without using sockets.  Sockets are tricky to scale and so I chose to use a polling method against the cloud function for simplicity.
+    - As free as possible.  The cloud db is the largest cost in this stack ($7-ish/mo).  The site is statically hosted on github pages
 
 ## Next steps
 
