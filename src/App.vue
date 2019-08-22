@@ -41,6 +41,19 @@ export default {
       message: ""
     }
   },
+  updated() {
+    // //console.log(this.messages)
+    // const id = this.messages.length > 0 ? this.messages[this.messages.length - 1].id : null;
+    // //console.log("id", id)
+    // if(id) {
+    //   const obj = document.getElementById(id);
+    //   const container = document.getElementsByClassName("container-inner");
+    //   // console.log(obj)
+    //   if (!obj) {return}
+    //   obj.scrollIntoView();
+    //   container.scrollTop = container.scrollHeight;
+    // }
+  },
   components: {
     Message
   },
@@ -57,7 +70,7 @@ export default {
     
     },
     onRefresh(){
-      this.pollMessages();
+      this.pollMessages();    
     }
   }
 }

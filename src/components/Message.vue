@@ -1,5 +1,5 @@
 <template>
-  <div class="card flex-row">
+  <div :id="id" class="card flex-row">
     <div class="avatar">
       <img alt="User Avatar" :src="avatarUrl"/>
     </div>

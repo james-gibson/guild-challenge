@@ -43,6 +43,19 @@ const store = new Vuex.Store({
       .then((data) => {
         context.commit("recieveMessages", data);
         setTimeout(() => context.dispatch("pollMessages"),2000);
+        //console.log(this.messages)
+        const messages = context.state.messages || [];
+        const id = messages.length > 0 ? messages[messages.length - 1].id : null;
+        //console.log("id", id)
+        if(id) {
+          const obj = document.getElementById(id);
+          const container = document.getElementsByClassName("container-inner");
+          // console.log(obj)
+          if (!obj) {return}
+          obj.scrollIntoView();
+          container.scrollTop = container.scrollHeight;
+        }
+        
 
         // eslint-disable-next-line
         // console.log('pollMessages', JSON.stringify(data));
