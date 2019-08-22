@@ -74,12 +74,12 @@ CREATE TABLE messages (
   * Security!!  The server currently has no authentication. Placing this behind an oAUTH solution would be the first place I'd start
   * Test coverage. Implementing the core functionality took a little longer then I expected
   * Accessibility. While the app is mostly semantic html more focus could be given here
-  * Infrastructure as code. I manually created the db and cloud functions, I'd want to conver that into ansible/terraform/etc
+  * Infrastructure as code. I manually created the db and cloud functions, I'd want to convert that into ansible/terraform/etc
   * CI/CD. Wire in cloud buildpacks to keep deployments up to date
   * Stronger UI/UX. Perhaps give the app a stronger focus 
   * Avatars. Currently when the app loads you are assigned a random image.  Ideally this would be user chosen
   * Improved text handling. Markdown support maybe?
-  * Architectural diagram.  Detailed grapic identifying all the components of the app
+  * Architectural diagram.  Detailed graphic identifying all the components of the app
 
 ## Bugs
   * Chat does not handle apostrophes

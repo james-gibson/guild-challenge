@@ -1,32 +1,30 @@
 <template>
-  <div id="app">
-    <h1>Messenger App</h1>
-    <div class="container">
-      <div class="container-inner">
-        <div class="" v-for="message in messages" :key="message.id">
-          <Message 
-            :userId="message.userid" 
-            :id="message.id" 
-            :avatarUrl="message.avatarurl" 
-            :message="message.msg" 
-            />
-        </div>
+<div id="app">
+    <header>
+      <h1>Messenger App</h1>
+    </header>
+    <main class="container">
+      <section class="container-inner">
+        <Message
+          v-for="message in messages"
+          :key="message.id"
+          :userId="message.userid"
+          :id="message.id"
+          :avatarUrl="message.avatarurl"
+          :message="message.msg"
+        />
+      </section>
+      <div class="toolbar flex-row">
+        <input
+          placeholder="Say something!"
+          @keypress.enter="onSubmit"
+          type="text"
+          name="message"
+          v-model="message"
+        />
+        <button class="secondary" @click="onSubmit">Send message</button>
       </div>
-      <div class="toolbar">
-        <div class="flex-row">
-          <input 
-            placeholder="Say something!" 
-            @keypress.enter="onSubmit" 
-            type="text" 
-            name="message" 
-            v-model="message" 
-            />
-          <div>
-            <button class="secondary" @click="onSubmit">Send message</button><br />
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -93,7 +91,7 @@ body {
     line-height: 1.35;
   }
 
-  div.avatar {
+  .avatar {
     padding-left: .5rem;
     margin: .5rem;
     width: 3rem;
@@ -116,6 +114,7 @@ body {
 
   button {
     height: 3.5rem;
+    width: 10rem;
     font-size: 16px;
     margin-right: 2rem;
     padding: 0.5rem 2rem;
@@ -188,15 +187,15 @@ body {
   text-align: center;
   background-color: $onyx;
   
-  div.container {
-    div.container-inner{
+  .container {
+    .container-inner{
       flex-direction: row-reverse;
       height: 65vh;
       overflow-y: scroll;
       display: flex-row;
     }
 
-    div.toolbar {
+    .toolbar {
       input {
         height: 3rem;
         margin-right: 2rem;
