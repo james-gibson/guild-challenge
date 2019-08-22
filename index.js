@@ -54,9 +54,9 @@ exports.handler = async (req, res) => {
     if (req.method === 'GET') {
         const messages = 
             await knex.select('*')
-                .from('messages')
-                .orderBy('id')
-                .catch(console.log);
+                      .from('messages')
+                      .orderBy('id')
+                      .catch(console.log);
          
         response.messages = messages;    
     }

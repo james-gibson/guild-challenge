@@ -25,57 +25,44 @@ const store = new Vuex.Store({
   },
   actions: {
     sendMessage (context, payload) {
-      // eslint-disable-next-line
-      // console.log(`Send: ${payload}`);
-
       // User id is hardcoded (support for multiple identified users is not implemented yet)
-      postMessage(Axios)({id:Date.now(), userId: '1', avatarUrl: AVATAR_URL, msg: payload})
+      const messageBody = {id:Date.now(), userId: '1', avatarUrl: AVATAR_URL, msg: payload};
+      postMessage(Axios)(messageBody)
         .then((data) => {
           context.commit("recieveMessages", data)
-
-            // eslint-disable-next-line
-            // console.log('pollMessages', JSON.stringify(data));
-          });
+        });
     },
     pollMessages (context) {
       fetchMessages(Axios)
         .then((data) => {
           context.commit("recieveMessages", data);
+          
           setTimeout(() => context.dispatch("pollMessages"),2000);
-          //console.log(this.messages)
+
           const messages = context.state.messages || [];
           const id = messages.length > 0 ? messages[messages.length - 1].id : null;
-          //console.log("id", id)
+
           if(id) {
             const obj = document.getElementById(id);
             const container = document.getElementsByClassName("container-inner");
-            // console.log(obj)
+
             if (!obj) {return}
             obj.scrollIntoView();
             container.scrollTop = container.scrollHeight;
           }
-          
-
-          // eslint-disable-next-line
-          // console.log('pollMessages', JSON.stringify(data));
         })
       
     }
   },
   mutations: {
     sendMessage (state, payload) {
-      // eslint-disable-next-line
-      // console.log(`Sending ${payload}`);
       state.isSending = true;
     },
     messageSent (state, payload) {
       state.isSending = false;
     },
     recieveMessages (state, payload) {
-      // eslint-disable-next-line
-      // console.log(`Poll results ${payload}`);
-      state.messages = payload.data.messages;
-      
+      state.messages = payload.data.messages;    
     },
   }
 })
