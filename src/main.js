@@ -55,10 +55,10 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    sendMessage (state, payload) {
+    sendMessage (state) {
       state.isSending = true;
     },
-    messageSent (state, payload) {
+    messageSent (state) {
       state.isSending = false;
     },
     recieveMessages (state, payload) {

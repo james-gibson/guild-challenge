@@ -132,10 +132,11 @@ body {
   justify-content: flex-start;
   align-items: center;
 
+  input {
+    width: 70%;
+  }
   input, button {
     flex: 1 0;
-    flex-grow: 1;
-
   }
 
   input {
